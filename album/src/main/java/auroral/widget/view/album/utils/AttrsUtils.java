@@ -5,11 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
-/**
- * @author：luck
- * @data：2018/3/28 下午1:26
- * @描述:style动态获取
- */
 
 public class AttrsUtils {
 
