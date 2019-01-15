@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- toolbar config -->
+    <color name="alb_toolbar_common_pressed">#3cba98</color>
+    <color name="alb_toolbar_common">#42cba6</color>
+    <color name="alb_toolbar_title_text">#fff</color>
+
+    <color name="alb_picture_sign_selected">#FA632D</color>
+    <color name="alb_picture_sign">#9b9b9b</color>
+
+    <color name="alb_dialog_folder">#F0FFFFFF</color>
+    <color name="alb_dialog_folder_selected">#E0DBDBDB</color>
+
+    <color name="alb_image_overlay_selected">#80000000</color>
+    <color name="alb_image_overlay">#20000000</color>
+
+    <color name="alb_image_bg">#999999</color>
+
+    <color name="alb_transparent">#00000000</color>
+    <color name="alb_white">#FFFFFF</color>
+    <color name="alb_orange">#E0FF6100</color>
+
+</resources>
