@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.auroral.album.R;
+import auroral.widget.view.album.R;
 import auroral.widget.view.album.config.AlbumConfig;
 import auroral.widget.view.album.entity.Media;
 import auroral.widget.view.album.utils.AnimationLoaderUtils;

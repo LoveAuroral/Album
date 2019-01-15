@@ -12,7 +12,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.auroral.album.R;
+import auroral.widget.view.album.R;
 import auroral.widget.view.album.adapter.FolderAdapter;
 import auroral.widget.view.album.decoration.FolderDecoration;
 import auroral.widget.view.album.entity.Media;

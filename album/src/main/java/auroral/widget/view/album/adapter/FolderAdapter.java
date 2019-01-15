@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.auroral.album.R;
+import auroral.widget.view.album.R;
 import auroral.widget.view.album.entity.Media;
 import auroral.widget.view.album.entity.MediaFolder;
 import com.bumptech.glide.Glide;
