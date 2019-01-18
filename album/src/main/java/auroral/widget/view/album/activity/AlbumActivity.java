@@ -43,6 +43,7 @@ public class AlbumActivity extends AppCompatActivity {
     private TextView tv_content, tv_finish, tv_select_folder, tv_select_image_num, tv_select_image_sign;
     private ImageView iv_left_arrow;
     private RecyclerView rv_media;
+    private String[] mImages;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,7 +62,7 @@ public class AlbumActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        String[] images = getIntent().getStringArrayExtra("images");
+        mImages = getIntent().getStringArrayExtra("images");
         mFolderDialog = new FolderDialog(this);
         mFolderDialog.setOnClickListener(new FolderDialog.OnClickListener() {
             @Override
@@ -71,15 +72,6 @@ public class AlbumActivity extends AppCompatActivity {
             }
         });
         mImageAdapter = new ImageAdapter(mContext);
-
-        if (images != null && images.length > 0) {
-            List<Media> selection = new ArrayList<>();
-            for (String path :
-                    images) {
-                selection.add(new Media(path, 0, AlbumConfig.TYPE_IMAGE, ".png"));
-            }
-            mImageAdapter.bindSelectImages(selection);
-        }
         mImageAdapter.setOnSelectChangedListener(new ImageAdapter.OnSelectChangedListener() {
             @Override
             public void onChange(List<Media> selectImages) {
@@ -195,6 +187,15 @@ public class AlbumActivity extends AppCompatActivity {
                     List<Media> localImg = folder.getImages();
                     mFolderDialog.setFolderInfo(mMediaFolders);
                     mImageAdapter.bindImagesData(localImg);
+                }
+                // Binds the selected image after all images have been loaded.
+                if (mImages != null && mImages.length > 0) {
+                    List<Media> selection = new ArrayList<>();
+                    for (String path :
+                            mImages) {
+                        selection.add(new Media(path, 0, AlbumConfig.TYPE_IMAGE, ".png"));
+                    }
+                    mImageAdapter.bindSelectImages(selection);
                 }
             }
         });
