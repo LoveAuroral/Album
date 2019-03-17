@@ -193,7 +193,7 @@ public class AlbumActivity extends AppCompatActivity {
                     List<Media> selection = new ArrayList<>();
                     for (String path :
                             mImages) {
-                        selection.add(new Media(path, 0, AlbumConfig.TYPE_IMAGE, ".png"));
+                        selection.add(new Media(path, 0, AlbumConfig.TYPE_IMAGE, AlbumConfig.IMAGE));
                     }
                     mImageAdapter.bindSelectImages(selection);
                 }

@@ -16,13 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import auroral.widget.view.album.R;
-import auroral.widget.view.album.config.AlbumConfig;
-import auroral.widget.view.album.entity.Media;
-import auroral.widget.view.album.utils.AnimationLoaderUtils;
-import auroral.widget.view.album.utils.DateUtils;
-import auroral.widget.view.album.utils.MediaTypeUtil;
-import auroral.widget.view.album.utils.ToastManage;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
@@ -30,6 +23,14 @@ import com.bumptech.glide.request.RequestOptions;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import auroral.widget.view.album.R;
+import auroral.widget.view.album.config.AlbumConfig;
+import auroral.widget.view.album.entity.Media;
+import auroral.widget.view.album.utils.AnimationLoaderUtils;
+import auroral.widget.view.album.utils.DateUtils;
+import auroral.widget.view.album.utils.MediaTypeUtil;
+import auroral.widget.view.album.utils.ToastManage;
 
 public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final static int DURATION = 450;
@@ -382,7 +383,7 @@ public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
     public void setOnSelectChangedListener(OnSelectChangedListener
-                                                        imageSelectChangedListener) {
+                                                   imageSelectChangedListener) {
         mOnSelectChangedListener = imageSelectChangedListener;
     }
 
