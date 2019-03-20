@@ -52,9 +52,9 @@ public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
      */
     private boolean isGo;
 
-    public ImageAdapter(Context context) {
+    public ImageAdapter(Context context,int selectMode) {
         this.context = context;
-        this.selectMode = AlbumConfig.MULTIPLE;// 多选 or 单选 PictureConfig.MULTIPLE : PictureConfig.SINGLE
+        this.selectMode = selectMode;
         this.showCamera = false;
         this.maxSelectNum = 8;// 最大图片选择数量
         this.enablePreview = false;// 是否可预览图片

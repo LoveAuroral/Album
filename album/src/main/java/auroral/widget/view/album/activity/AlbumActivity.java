@@ -44,6 +44,7 @@ public class AlbumActivity extends AppCompatActivity {
     private ImageView iv_left_arrow;
     private RecyclerView rv_media;
     private String[] mImages;
+    private boolean mIsSingleSelect;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,7 +63,8 @@ public class AlbumActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        mImages = getIntent().getStringArrayExtra("images");
+        mIsSingleSelect = getIntent().getBooleanExtra("isSingleSelect", false);
+        if (!mIsSingleSelect) mImages = getIntent().getStringArrayExtra("images");
         mFolderDialog = new FolderDialog(this);
         mFolderDialog.setOnClickListener(new FolderDialog.OnClickListener() {
             @Override
@@ -71,7 +73,7 @@ public class AlbumActivity extends AppCompatActivity {
                 mImageAdapter.bindImagesData(images);
             }
         });
-        mImageAdapter = new ImageAdapter(mContext);
+        mImageAdapter = new ImageAdapter(mContext, mIsSingleSelect ? AlbumConfig.SINGLE : AlbumConfig.MULTIPLE);// 多选 or 单选 AlbumConfig.MULTIPLE : AlbumConfig.SINGLE
         mImageAdapter.setOnSelectChangedListener(new ImageAdapter.OnSelectChangedListener() {
             @Override
             public void onChange(List<Media> selectImages) {
